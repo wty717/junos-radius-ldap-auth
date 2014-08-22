@@ -40,7 +40,7 @@ modifiersName: cn=admin,dc=dyn,dc=com
 modifyTimestamp: 20140818023301Z
 
 ````
-Create initial LDIF file and load into LDAP:
+Create initial [LDIF FILE](ldap/test.ldif) and load into LDAP:
 ````
 root@auth1:~# ldapadd -H ldap://localhost -x -D "cn=admin,dc=dyn,dc=com" -f /home/jmillay/test.ldif -w secret
 adding new entry "ou=groups, dc=dyn, dc=com"
@@ -52,7 +52,7 @@ adding new entry "cn=Jeremiah Millay, ou=people, dc=dyn, dc=com"
 adding new entry "cn=admins, ou=groups, dc=dyn, dc=com"
 ````
 
-Edit /etc/freeradius/sites-enabled/default
+Edit [/etc/freeradius/sites-enabled/default](freeradius/sites-enabled/default)
 ````
 authorize { 
 	auth_log 
@@ -66,7 +66,7 @@ authenticate {
 
 }
 ````
-Edit /etc/freeradius/modules/ldap
+Edit [/etc/freeradius/modules/ldap](freeradius/modules/ldap) (diff against original):
 ````
 33,36c33,36
 < 	server = "localhost"
@@ -84,12 +84,12 @@ Edit /etc/freeradius/modules/ldap
 > 	# set_auth_type = yes
 ````
 
-Edit /etc/freeradius/ldap.attrmap and add as a checkItem entry:
+Edit [/etc/freeradius/ldap.attrmap](freeradius/ldap.attrmap) and add as a checkItem entry:
 ````
 checkItem       User-Password                   userPassword
  
 ````
-Edit /etc/freeradius/clients.conf and place this at the bottom replacing the IP,secret, and name of your Juniper device:
+Edit [/etc/freeradius/clients.conf](freeradius/clients.conf) and place this at the bottom replacing the IP,secret, and name of your Juniper device:
 ````
 client 192.168.1.114 {
        secret          = "i<3JUNOS"
