@@ -1,0 +1,38 @@
+dn:ou=groups, dc=dyn, dc=com
+objectclass: top
+objectclass: organizationalUnit
+ou: groups
+
+dn:ou=people, dc=dyn, dc=com
+objectclass: top
+objectclass: organizationalUnit
+ou: people
+
+dn: cn=Jeremiah Millay, ou=people, dc=dyn, dc=com
+cn: Jeremiah Millay
+sn: Millay
+objectclass: top
+objectclass: person
+objectclass: posixAccount
+objectclass: shadowAccount
+uid:jmillay
+userpassword:{crypt}$6$BIK4ZmNj$AOZYS1lWWjtKbLc4I0TBXOocyWYSvh4QIH1uf66YVRhsCnW4jI20frOr6FjvpupDodou7TMCioqKi9oULyYZu/
+uidnumber:1000
+gidnumber:1000
+gecos:Jeremiah Millay
+loginShell:/bin/bash
+homeDirectory: /home/jmillay
+shadowLastChange:0
+shadowMin: 0
+shadowMax: 999999
+shadowWarning: 7
+shadowInactive: -1
+shadowExpire: -1
+shadowFlag: 0
+
+dn: cn=admins, ou=groups, dc=dyn, dc=com
+objectclass: top
+objectclass: posixGroup
+cn: admins
+gidnumber: 100
+memberuid: jmillay
