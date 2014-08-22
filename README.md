@@ -120,7 +120,7 @@ root@LAB-SRX-1# show | compare
 +      }
 +  }
 ````
-Attempt to log into your Juniper device and verify successul authentication in /var/log/freeradius/radius.log
+Attempt to log into your Juniper device and verify successul authentication in /var/log/freeradius/radius.log on the RADIUS server:
 ````
 Tue Aug 19 21:45:23 2014 : Auth: Login OK: [jmillay] (from client LAB-SRX-1 port 0 cli 192.168.1.130)
 ````
